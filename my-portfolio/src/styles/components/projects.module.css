@@ -1,0 +1,381 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  height: 10vh; /* 10% of viewport height */
+  z-index: 1000;
+  gap: 110px;
+  padding-left: 145px;
+  padding-right: 145px;
+}
+
+.logo h1 {
+  color: white;
+  font-size: 2rem;
+}
+
+.navLinks {
+  color: white;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbarLinks a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbarLinks a:hover {
+  color: #f0a500;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  background-color: white;
+  height: 4px;
+  width: 100%;
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: transparent;
+  padding: 20px;
+  padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; /* Hide nav links on small screens */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger menu on small screens */
+  }
+}
+
+/* Projects Section Styling */
+.projectsSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh; /* Ensures full height of the viewport */
+  background-color: #1f1e1e;
+  padding: 20px;
+}
+
+.projectsContainer {
+  text-align: center;
+  width: 100%;
+  max-width: 1200px; /* Set max-width for larger screens */
+}
+
+.projectsSection h2 {
+  font-size: 3rem;
+  color: #267CD1;
+  margin-bottom: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Project Card Styling */
+.projectCard {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 400px; /* Larger size for professional look */
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.projectCard:hover {
+  transform: translateY(-10px); /* Hover effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Image Styling */
+.projectImage {
+  width: 100%;
+  height: 220px; /* Increased height for a larger, more impactful image */
+  object-fit: cover;
+  border-radius: 8px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.projectCard:hover .projectImage {
+  opacity: 0.9; /* Image slightly fades when hovering */
+}
+
+.projectCard h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin: 20px 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.projectCard p {
+  color: #b8b8b8;
+  font-size: 1rem;
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+/* Hover Effects */
+.projectCard:hover h3 {
+  color: #f0a500; /* Change text color to gold */
+}
+
+/* Button Styling */
+.projectButton {
+  background-color: #267CD1;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.projectButton:hover {
+  background-color: #f0a500; /* Button changes color on hover */
+}
+
+/* Global Responsive Styles */
+
+/* General mobile styles (up to 480px) */
+@media (max-width: 480px) {
+  .projectsContainer {
+    margin-top: 100px;
+  }
+
+  .navbar {
+    padding: 0 15px;
+    height: 8vh; /* Smaller navbar height */
+    justify-content: space-between;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .navLinks {
+    display: none; /* Hide nav links, show hamburger */
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .projectsSection h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectCard {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .projectCard h3 {
+    font-size: 1.4rem;
+  }
+
+  .projectCard p {
+    font-size: 0.9rem;
+  }
+
+  .projectButton {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+
+  .skills ul {
+    gap: 10px;
+  }
+
+  .skills li {
+    width: 100px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .projectsContainer {
+    margin-top: 100px;
+  }
+
+  .navbar {
+    padding: 0 20px;
+    justify-content: space-between;
+  }
+
+  .logo h1 {
+    font-size: 1.8rem;
+  }
+
+  .projectsSection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .projectsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .projectCard {
+    max-width: 320px;
+    padding: 20px;
+  }
+
+  .projectCard h3 {
+    font-size: 1.6rem;
+  }
+
+  .projectCard p {
+    font-size: 1rem;
+  }
+
+  .projectButton {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+
+  .skills li {
+    width: 110px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .projectsContainer {
+    margin-top: 100px;
+  }
+
+  .navbar {
+    padding: 0 30px;
+  }
+
+  .projectsSection h2 {
+    font-size: 2.8rem;
+    margin-bottom: 35px;
+  }
+
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projectCard {
+    max-width: 360px;
+    padding: 25px;
+  }
+
+  .projectCard h3 {
+    font-size: 1.7rem;
+  }
+
+  .projectCard p {
+    font-size: 1.1rem;
+  }
+
+  .projectButton {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+  }
+
+  .skills li {
+    width: 115px;
+    font-size: 1rem;
+  }
+}
+
+/* Laptops (1025px to 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .navbar {
+    padding: 0 50px;
+  }
+
+  .projectsSection h2 {
+    font-size: 3rem;
+  }
+
+  .projectsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .projectCard {
+    max-width: 400px;
+    padding: 30px;
+  }
+
+  .projectCard h3 {
+    font-size: 1.8rem;
+  }
+
+  .projectCard p {
+    font-size: 1.2rem;
+  }
+
+  .projectButton {
+    font-size: 1.2rem;
+    padding: 12px 30px;
+  }
+
+  .skills li {
+    width: 120px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Large screens (1441px and above) */
+@media (min-width: 1441px) {
+  .navbar {
+    padding-left: 145px;
+    padding-right: 145px;
+  }
+
+  .projectCard {
+    max-width: 400px;
+    max-height: fit-content;
+  }
+}

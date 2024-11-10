@@ -1,0 +1,313 @@
+/* Base Navbar Style */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  height: 10vh; /* 10% of viewport height */
+  z-index: 1000;
+  gap: 110px;
+  padding-left: 145px;
+  padding-right: 145px;
+}
+
+.logo h1 {
+  color: white;
+  font-size: 2rem;
+}
+
+.navLinks {
+  color: white;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbarLinks a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbarLinks a:hover {
+  color: #f0a500;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  background-color: white;
+  height: 4px;
+  width: 100%;
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: transparent;
+  padding: 20px;
+  padding-top: 30px;
+}
+
+/* Media Queries */
+
+/* For screens smaller than 768px (tablet and mobile devices) */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; /* Hide nav links on small screens */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger menu */
+  }
+
+  .mobileMenu {
+    display: none; /* Initially hide mobile menu */
+  }
+
+  .hamburger.active + .mobileMenu {
+    display: flex; /* Show mobile menu when hamburger is active */
+  }
+
+  /* Adjust navbar */
+  .navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+    gap: 0px;
+  }
+
+  .logo h1 {
+    font-size: 1rem; /* Adjust logo size */
+  }
+
+  .navLinks {
+    gap: 10px; /* Adjust nav link spacing */
+  }
+
+  .navbarLinks a {
+    font-size: 0.9rem; /* Smaller font size for nav links */
+  }
+}
+
+/* For larger screens, adjusting padding based on screen width */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .navbar {
+    padding-left: 99px;
+    padding-right: 99px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* For small screens like phones */
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 1rem;
+  }
+
+  .navLinks {
+    gap: 10px;
+  }
+
+  .navbarLinks a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Section Layout (About, Skills, Profile) */
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f1e1e;
+  min-height: 90vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 100px;
+}
+
+.profileImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
+.profileImage img {
+  border-radius: 50%;
+  box-shadow: 0 0px 8px 10px rgba(83, 83, 83, 0.932);
+}
+
+.intro {
+  text-align: left;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  color: #267CD1;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.intro p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Skills Section */
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-column: span 2;
+}
+
+.skills h3 {
+  font-size: 1.5rem;
+  color: #267CD1;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.skills ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.skills li {
+  background-color: #267CD1; /* Keep skill item color */
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative; /* For positioning the percentage */
+  cursor: pointer;
+  width: 125px; /* Fixed width for larger screens */
+  height: 50px; /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content */
+  align-items: center;
+}
+
+/* Hover animation for skill item */
+.skills li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Position percentage below skill item */
+.skills li .skillPercentage {
+  display: none; /* Hidden by default */
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50; /* Green background for percentage */
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.6), 0 0 20px rgba(76, 175, 80, 0.8);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Show percentage with glowing effect on hover */
+.skills li:hover .skillPercentage {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(5px);
+  box-shadow: 0 0 15px rgba(76, 175, 80, 1), 0 0 30px rgba(76, 175, 80, 1);
+}
+
+/* Tablet and Mobile Adjustments */
+@media (max-width: 768px) {
+  .skills ul {
+    justify-content: space-between;
+  }
+
+  .skills li {
+    width: 120px; /* Smaller width for tablets */
+  }
+}
+
+/* For small devices like phones */
+@media (max-width: 480px) {
+  .skills ul {
+    justify-content: center;
+  }
+
+  .skills li {
+    width: 100px; /* Further reduce width on small screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .skills {
+    grid-column: span 1;
+  }
+
+  .profileImage img {
+    height: 125px;
+    width: 125px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro h2 {
+    font-size: 1.8rem;
+  }
+
+  .skills li {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}

@@ -1,0 +1,74 @@
+/* src/styles/components/experience.module.css */
+
+.experience {
+  padding: 50px 20px;
+  background-color: #1f1e1e;
+  color: #fff;
+}
+
+.experience h2 {
+  font-size: 2.5rem;
+  color: #267cd1;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.timelineItem {
+  border-left: 3px solid #267cd1;
+  padding-left: 20px;
+  position: relative;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 10px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #267cd1;
+}
+
+.timelineDate {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.timelineContent h3 {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.timelineContent ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.timelineContent ul li {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .experience h2 {
+    font-size: 2rem;
+  }
+  
+  .timelineItem {
+    padding-left: 15px;
+  }
+  
+  .timelineContent h3 {
+    font-size: 1.2rem;
+  }
+}

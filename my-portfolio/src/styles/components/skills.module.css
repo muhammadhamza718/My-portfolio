@@ -1,0 +1,78 @@
+/* src/styles/components/skills.module.css */
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background-color: rgb(31, 30, 30);
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #267CD1;
+  text-align: center;
+}
+
+.skills ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+}
+
+.skills li {
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: #267CD1;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the card effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.skills li:hover {
+  transform: translateY(-5px); /* Slight upward movement on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.skills li:active {
+  transform: translateY(0); /* Reset to original position when clicked */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .skills h2 {
+    font-size: 2rem; /* Smaller font size on tablets */
+  }
+
+  .skills li {
+    font-size: 1rem; /* Reduce font size for smaller devices */
+    padding: 12px 25px;
+    width: 180px; /* Adjust width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills h2 {
+    font-size: 1.5rem; /* Further reduce font size on small screens */
+  }
+
+  .skills li {
+    font-size: 0.9rem; /* Further reduce font size */
+    padding: 10px 20px;
+    width: 160px; /* Make skills fit on very small screens */
+  }
+}
